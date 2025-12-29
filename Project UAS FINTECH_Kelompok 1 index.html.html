@@ -1,0 +1,2619 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your FinTech Education. Edukasi Financial Technology</title>
+  <meta name="description" content="Platform edukasi fintech untuk literasi keuangan. Bisa ngebantu kamu lebih paham dengan Fintech dengan game!." />
+  <style>
+:root{
+      --bg:#f4f6fb;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --primary:#1fa2a6;
+      --success:#16a34a;
+      --danger:#dc2626;
+      --warnbg:#fff7ed;
+      --warnline:#fed7aa;
+      --info:#eef2ff;
+      --infoline:#c7d2fe;
+      --shadow: 0 10px 22px rgba(15, 23, 42, .08);
+      --radius: 14px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
+    .header{background:var(--primary);color:#fff}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background:rgba(255,255,255,.18);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+    }
+    .brand h1{font-size:18px;margin:0;font-weight:900}
+    .brand p{font-size:12px;margin:2px 0 0;opacity:.95}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .nav a, .nav button{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:800;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .nav a:hover, .nav button:hover{background:rgba(255,255,255,.20)}
+    .hud{margin-top:12px;display:grid;grid-template-columns: 1.2fr .8fr;gap:12px}
+    .hud .box{background:rgba(255,255,255,.16);border-radius:12px;padding:12px}
+    .hud .row{display:flex;justify-content:space-between;gap:10px;font-size:12px;opacity:.98}
+    .progress{height:10px;background:rgba(255,255,255,.22);border-radius:99px;margin-top:8px;overflow:hidden}
+    .progress > div{height:100%;width:0%;background:rgba(255,255,255,.92)}
+    .hud .box2{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .hud .k{font-size:12px;opacity:.98}
+    .hud .v{font-size:18px;font-weight:900;margin-top:2px}
+    .grid2{display:grid;grid-template-columns: 1.2fr .8fr;gap:14px;align-items:start}
+    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      padding:16px;
+    }
+    h2{margin:0}
+    h3{margin:0 0 8px}
+    p{margin:8px 0 0;color:var(--muted)}
+    .btn{
+      appearance:none;
+      border:1px solid #cbd5e1;
+      background:#fff;
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:800;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+    }
+    .btn:hover{background:#f8fafc}
+    .btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+    .btn.primary:hover{filter:brightness(.98)}
+    .btn.success{background:var(--success);border-color:var(--success);color:#fff}
+    .btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+    .modulebtn{width:100%;text-align:left;margin-top:10px;display:block;background:linear-gradient(135deg,#0b1220,#1d4ed8);border:1px solid rgba(255,255,255,.18);color:#fff;box-shadow:0 12px 26px rgba(2,6,23,.18);transition:transform .18s ease, box-shadow .18s ease, filter .18s ease}
+    .modulebtn:hover{transform:translateY(-1px);filter:saturate(1.05);box-shadow:0 16px 34px rgba(2,6,23,.22)}
+    .modulebtn .t{color:#fff;font-weight:900;font-size:18px;letter-spacing:.2px}
+    .modulebtn .d{color:rgba(255,255,255,.86);font-weight:700;margin-top:2px}
+    .modulebtn .t{font-weight:900;color:var(--text)}
+    .modulebtn .d{font-size:12px;color:var(--muted);margin-top:4px}
+    .callout{
+      margin-top:14px;
+      padding:12px;
+      border-radius:12px;
+      background:var(--info);
+      border:1px solid var(--infoline);
+      color:#1f2a44;
+    }
+    .callout a{color:#1d4ed8;font-weight:900}
+    .tabbar{display:flex;gap:8px;flex-wrap:wrap}
+    .tabbar button{
+      border-radius:999px;
+      padding:10px 12px;
+      border:1px solid #cbd5e1;
+      background:#fff;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .tabbar button.active{border-color:var(--primary);background:var(--primary);color:#fff}
+    .content{margin-top:12px}
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
+    .mini{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .mini.p2p ul li{color:#166534;font-weight:900}
+    .mini.p2p ul li::marker{color:#166534}
+
+    .two{display:grid;grid-template-columns: 1fr 1fr;gap:12px}
+    .typegrid{display:grid;grid-template-columns: 1fr 1fr;gap:12px}
+    .placeholder{border:2px dashed #cbd5e1;background:#f8fafc;border-radius:12px;padding:18px}
+    .label{display:block;font-size:12px;font-weight:900;color:#334155;margin-top:10px}
+    input, textarea{width:100%;padding:10px;border-radius:12px;border:1px solid #cbd5e1;outline:none;background:#fff;color:var(--text)}
+    textarea{min-height:90px;resize:vertical}
+    .row3{display:grid;grid-template-columns: repeat(3, 1fr);gap:10px;margin-top:10px}
+    .row2{display:grid;grid-template-columns: 1fr 1fr;gap:10px}
+    .resultrow{display:flex;justify-content:space-between;gap:10px;margin-top:8px;color:var(--muted)}
+    .resultrow b{color:var(--text)}
+    .warn{margin-top:12px;padding:12px;border-radius:12px;background:var(--warnbg);border:1px solid var(--warnline);color:#7c2d12}
+    .big{font-size:20px;font-weight:900;color:var(--text);margin-top:6px}
+    .chipwrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid #cbd5e1;background:#f8fafc;font-size:12px;font-weight:900}
+    .footer{background:#0b1220;color:#9aa4b2;text-align:center;padding:18px;margin-top:18px}
+    .footer .credits{font-size:13px;line-height:1.5}
+    .hidden{display:none}
+    @media (max-width: 960px){
+      .hud{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .typegrid{grid-template-columns:1fr}
+      .row2{grid-template-columns:1fr}
+      .row3{grid-template-columns:1fr}
+    }
+    .playShape{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#eef2ff;
+      border:1px solid #c7d2fe;
+      color:#1d4ed8;
+      font-weight:900;
+    }
+    .banner{
+      margin-top:12px;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid #e2e8f0;
+      background:#f8fafc;
+      font-weight:900;
+    }
+    .banner.low{ background:#fff7ed; border-color:#fed7aa; color:#7c2d12; }
+    .banner.mid{ background:#eef2ff; border-color:#c7d2fe; color:#1e3a8a; }
+    .banner.high{ background:#ecfdf5; border-color:#bbf7d0; color:#14532d; }
+  
+/* ===== FinEdu Refresh Theme (Finance vibe) ===== */
+:root{
+  --bg:#06121f;
+  --card:rgba(255,255,255,.92);
+  --text:#07121c;
+  --muted:#3b4a5c;
+  --line:rgba(15,23,42,.10);
+  --primary:#14b8a6;       /* teal */
+  --primary2:#22c55e;      /* green */
+  --primaryDark:#0f766e;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --warnbg:#fff7ed;
+  --warnline:#fed7aa;
+  --info:#ecfeff;
+  --infoline:#a5f3fc;
+  --shadow: 0 18px 40px rgba(2, 6, 23, .20);
+  --shadow2: 0 10px 18px rgba(2, 6, 23, .12);
+  --radius: 16px;
+  --max: 1000px;
+}
+
+body{
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(20,184,166,.20), transparent 60%),
+    radial-gradient(700px 420px at 85% 0%, rgba(34,197,94,.18), transparent 55%),
+    radial-gradient(700px 500px at 70% 90%, rgba(59,130,246,.14), transparent 55%),
+    linear-gradient(180deg, #06121f 0%, #0b1626 40%, #07101c 100%);
+  color:#eaf1ff;
+}
+
+.wrap{padding:22px}
+
+.header{
+  position:relative;
+  background: linear-gradient(90deg, #0b2140 0%, #0f3b3a 45%, #0b2140 100%);
+  overflow:hidden;
+}
+
+.header:before{
+  content:"";
+  position:absolute; inset:-1px;
+  background:
+    radial-gradient(600px 250px at 20% 0%, rgba(20,184,166,.35), transparent 60%),
+    radial-gradient(500px 220px at 80% 0%, rgba(34,197,94,.30), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.10), transparent 55%);
+  opacity:.95;
+  pointer-events:none;
+}
+
+.header .wrap{position:relative; z-index:1}
+
+.logo{
+  background: linear-gradient(135deg, rgba(20,184,166,.95), rgba(34,197,94,.90));
+  box-shadow: 0 10px 18px rgba(20,184,166,.18);
+  border: 1px solid rgba(255,255,255,.20);
+}
+
+.nav a, .nav button{
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.nav a:hover, .nav button:hover{
+  background:rgba(255,255,255,.16);
+  transform: translateY(-1px);
+}
+
+.hud .box{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 10px 18px rgba(2, 6, 23, .12);
+  backdrop-filter: blur(10px);
+}
+
+.progress{
+  background: rgba(255,255,255,.14);
+  position:relative;
+}
+.progress > div{
+  background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.80));
+  position:relative;
+  overflow:hidden;
+}
+.progress > div:after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.35) 35%, transparent 70%);
+  transform: translateX(-120%);
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes shimmer{
+  0%{transform: translateX(-120%)}
+  55%{transform: translateX(120%)}
+  100%{transform: translateX(120%)}
+}
+
+.card{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: var(--shadow2);
+  transform: translateY(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(20,184,166,.28);
+}
+
+h2,h3,b{color:#07121c}
+p{color: #334155}
+.footer{
+  background: transparent;
+  color: rgba(234,241,255,.70);
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.btn{
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  box-shadow: 0 8px 14px rgba(2,6,23,.10);
+}
+.btn:hover{transform: translateY(-1px)}
+.btn.primary{
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary2) 100%);
+  border-color: rgba(255,255,255,.10);
+  box-shadow: 0 14px 26px rgba(20,184,166,.22);
+}
+.btn.primary:hover{filter:none; box-shadow: 0 16px 30px rgba(34,197,94,.18)}
+.btn.success{
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-color: rgba(255,255,255,.10);
+}
+.btn.danger{
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-color: rgba(255,255,255,.10);
+}
+
+.tabbar button{
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.tabbar button:hover{transform: translateY(-1px)}
+.tabbar button.active{
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary2) 100%);
+  border-color: transparent;
+}
+
+.callout{
+  background: rgba(236,254,255,.92);
+  border: 1px solid rgba(165,243,252,.90);
+}
+
+.mini{
+  background: rgba(248,250,252,.95);
+  border: 1px solid rgba(15,23,42,.08);
+}
+
+.playShape{
+  background: rgba(236,254,255,.92);
+  border: 1px solid rgba(165,243,252,.90);
+  color: #0f766e;
+}
+
+.banner{
+  background: rgba(248,250,252,.95);
+  border: 1px solid rgba(15,23,42,.10);
+}
+.banner.low{ background:#fff7ed; border-color:#fed7aa; color:#7c2d12; }
+.banner.mid{ background:#eef2ff; border-color:#c7d2fe; color:#1e3a8a; }
+.banner.high{ background:#ecfdf5; border-color:#bbf7d0; color:#14532d; }
+
+/* Page and card reveal animations */
+.pageIn{
+  animation: pageIn .35s ease both;
+}
+@keyframes pageIn{
+  from{opacity:0; transform: translateY(8px)}
+  to{opacity:1; transform: translateY(0)}
+}
+
+.reveal{
+  opacity:0;
+  transform: translateY(10px) scale(.99);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform: translateY(0) scale(1);
+  transition: opacity .45s ease, transform .45s ease;
+}
+
+/* Floating bubbles (subtle, finance vibe) */
+.fx-bubble{
+  position: fixed;
+  width: 18px; height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), rgba(255,255,255,.12));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 10px 18px rgba(2,6,23,.18);
+  opacity:.55;
+  pointer-events:none;
+  animation: floatUp var(--dur,10s) linear infinite;
+  z-index: 0;
+}
+@keyframes floatUp{
+  from{ transform: translateY(20px) translateX(0); }
+  to{ transform: translateY(-120vh) translateX(var(--drift, 20px)); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important}
+}
+
+  
+    /* --- polish pack: icons + hover + transitions --- */
+    .modulebtn{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      width:100%;
+      padding:16px 18px;
+      border-radius:16px;
+      background: linear-gradient(135deg, rgba(43,179,163,.95), rgba(100,116,139,.92));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 26px rgba(2, 6, 23, .18);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      position: relative;
+      overflow:hidden;
+    }
+    .modulebtn::before{
+      content:"";
+      position:absolute;
+      inset:-60% -40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 55%);
+      transform: rotate(12deg);
+      opacity:.55;
+      transition: opacity .22s ease, transform .28s ease;
+      pointer-events:none;
+    }
+    .modulebtn:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(2, 6, 23, .26);
+      filter: saturate(1.05);
+    }
+    .modulebtn:hover::before{
+      opacity:.8;
+      transform: rotate(12deg) translateY(10px);
+    }
+    .modulebtn:active{ transform: translateY(-1px); }
+    .modulebtn:focus-visible{
+      outline: 3px solid rgba(43,179,163,.45);
+      outline-offset: 3px;
+    }
+
+    .modulebtn .t{
+      color:#ffffff;
+      font-weight:800;
+      letter-spacing:.1px;
+    }
+    .modulebtn .d{
+      color: rgba(255,255,255,.85);
+    }
+    .modulebtn .mtxt{ display:flex; flex-direction:column; gap:2px; }
+
+    .mi{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+      flex: 0 0 44px;
+    }
+    .mi svg{
+      width:22px;
+      height:22px;
+      stroke: rgba(255,255,255,.95);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* softer hover on cards */
+    .card{
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(2, 6, 23, .14);
+      border-color: rgba(43,179,163,.22);
+    }
+
+    /* smoother page animation */
+    .pageIn{
+      animation: pageIn .42s ease both;
+    }
+    @keyframes pageIn{
+      from{ opacity:0; transform: translateY(10px) scale(.99); }
+      to{ opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    /* nicer tab hover */
+    .tabbar button{
+      transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease, border-color .16s ease;
+    }
+    .tabbar button:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(2, 6, 23, .10);
+      border-color: rgba(43,179,163,.25);
+    }
+
+
+        .module-content h1,
+        .module-content h2,
+        .module-content h3{
+          color:#ffffff;
+        }
+        
+/* === Module heading underline gradient === */
+.module-content h1{
+  position:relative;
+  padding-bottom:14px;
+}
+.module-content h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:120px;
+  height:4px;
+  border-radius:4px;
+  background: linear-gradient(90deg,#2bb3a3,#0f172a);
+}
+
+/* === Subtitle pill with gradient border === */
+.module-content h2{
+  display:inline-block;
+  padding:8px 16px;
+  margin:18px 0 10px;
+  border-radius:999px;
+  color:#ffffff;
+  background: linear-gradient(#0f172a,#0f172a) padding-box,
+              linear-gradient(90deg,#2bb3a3,#0f172a) border-box;
+  border:2px solid transparent;
+}
+
+
+/* ===== CLEAN OVERRIDES (final) ===== */
+
+/* Module header title + underline gradient */
+#moduleTitle{
+  color:#ffffff !important;
+  position:relative;
+  display:inline-block;
+  padding-bottom:14px;
+}
+#moduleTitle::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:140px;
+  height:4px;
+  border-radius:6px;
+  background: linear-gradient(90deg,#2bb3a3,#0f172a);
+}
+
+/* Module subtitle pill with gradient border */
+#moduleSub{
+  display:inline-block;
+  padding:8px 16px;
+  margin-top:10px;
+  border-radius:999px;
+  color:#ffffff !important;
+  background: linear-gradient(#0f172a,#0f172a) padding-box,
+              linear-gradient(90deg,#2bb3a3,#0f172a) border-box;
+  border:2px solid transparent;
+}
+
+/* Make module buttons readable (home) */
+.modulebtn .t{ color:#ffffff !important; }
+.modulebtn .d{ color:rgba(255,255,255,.86) !important; }
+
+/* Selected module button state */
+.modulebtn.mod-active{
+  background: linear-gradient(135deg,#0f172a,#0b3a36) !important;
+  border-color: rgba(43,179,163,.32) !important;
+}
+
+/* Article list visibility (after render) */
+#tabArtikel li,
+#tabInfografis li,
+#tabInteraktif li{
+  color:#2f7f73 !important;
+  font-weight:600;
+  opacity:1 !important;
+}
+#tabArtikel li::marker,
+#tabInfografis li::marker,
+#tabInteraktif li::marker{
+  color:#2bb3a3;
+}
+#tabArtikel p,
+#tabInfografis p,
+#tabInteraktif p{
+  color:#334155 !important;
+  opacity:1 !important;
+}
+
+/* Keep headings inside tab content readable */
+#tabArtikel h3, #tabVideo h3, #tabInfografis h3, #tabInteraktif h3{
+  color:#0f172a;
+}
+
+/* Tab active style clearer */
+.tabbar button.active{
+  background: linear-gradient(135deg,#2bb3a3,#0f172a) !important;
+  color:#ffffff !important;
+  border-color: rgba(43,179,163,.28) !important;
+}
+
+
+
+/* === EYECATCHING PACK (soft, finance vibe) === */
+
+/* animated gradient for top hero / header areas */
+.hero, .topbar, header{
+  position: relative;
+  overflow: hidden;
+}
+.hero::before, .topbar::before, header::before{
+  content:"";
+  position:absolute;
+  inset:-60% -40%;
+  background: radial-gradient(circle at 20% 20%, rgba(43,179,163,.35), transparent 55%),
+              radial-gradient(circle at 80% 30%, rgba(100,116,139,.28), transparent 55%),
+              radial-gradient(circle at 55% 85%, rgba(15,23,42,.22), transparent 55%);
+  filter: blur(2px);
+  animation: floatBg 10s ease-in-out infinite;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes floatBg{
+  0%{ transform: translate3d(0,0,0) scale(1); opacity:.95; }
+  50%{ transform: translate3d(18px,12px,0) scale(1.02); opacity:1; }
+  100%{ transform: translate3d(0,0,0) scale(1); opacity:.95; }
+}
+.hero > *, .topbar > *, header > *{ position:relative; z-index:1; }
+
+/* floating blobs in background */
+.bg-blobs{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-blobs span{
+  position:absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(43,179,163,.22), rgba(43,179,163,0));
+  filter: blur(0px);
+  opacity:.9;
+  animation: blob 14s ease-in-out infinite;
+}
+.bg-blobs span:nth-child(1){ left:-90px; top:12%; animation-duration: 15s; }
+.bg-blobs span:nth-child(2){ right:-120px; top:28%; width:340px; height:340px; background: radial-gradient(circle at 30% 30%, rgba(100,116,139,.18), rgba(100,116,139,0)); animation-duration: 18s; }
+.bg-blobs span:nth-child(3){ left:12%; bottom:-140px; width:420px; height:420px; background: radial-gradient(circle at 30% 30%, rgba(15,23,42,.18), rgba(15,23,42,0)); animation-duration: 20s; }
+@keyframes blob{
+  0%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(26px,-18px) scale(1.06); }
+  100%{ transform: translate(0,0) scale(1); }
+}
+
+/* card glow on hover */
+.card:hover{
+  box-shadow: 0 18px 40px rgba(2, 6, 23, .16) !important;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(43,179,163,.18), rgba(15,23,42,0));
+  opacity:0;
+  transition: opacity .18s ease;
+  pointer-events:none;
+}
+.card:hover::after{ opacity:1; }
+
+/* ripple effect for clickable buttons */
+.ripple{
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after{
+  content:"";
+  position:absolute;
+  left: var(--rx, 50%);
+  top: var(--ry, 50%);
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 999px;
+  background: rgba(255,255,255,.35);
+  opacity:0;
+  pointer-events:none;
+}
+.ripple.rippling::after{
+  animation: ripple .55s ease-out;
+}
+@keyframes ripple{
+  0%{ opacity:.65; transform: translate(-50%, -50%) scale(1); }
+  100%{ opacity:0; transform: translate(-50%, -50%) scale(22); }
+}
+
+/* shimmer for progress bars if present */
+.progressbar, .progress{
+  position:relative;
+  overflow:hidden;
+}
+.progressbar::after, .progress::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2.2s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shimmer{
+  0%{ transform: translateX(-100%); }
+  100%{ transform: translateX(100%); }
+}
+
+/* reveal animation classes controlled by JS */
+.reveal{
+  opacity:0;
+  transform: translateY(14px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* smooth module transition */
+.module-panel{
+  transition: opacity .22s ease, transform .22s ease;
+}
+.module-panel.switching{
+  opacity:0;
+  transform: translateY(8px);
+}
+
+
+/* === QUIZ UPGRADE: progress + badges + microinteractions === */
+.qprog{
+  margin-top:10px;
+  height:10px;
+  border-radius:999px;
+  background: rgba(148,163,184,.28);
+  overflow:hidden;
+  border: 1px solid rgba(43,179,163,.22);
+}
+.qprog-bar{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg,#2bb3a3,#0f172a);
+  transition: width .35s ease;
+  position:relative;
+  overflow:hidden;
+}
+.qprog-bar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2.2s ease-in-out infinite;
+}
+
+.chipwrap .chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(43,179,163,.25);
+  background: rgba(43,179,163,.08);
+  color:#0f172a;
+  font-weight:700;
+  margin:6px 8px 0 0;
+  transform: translateY(6px);
+  opacity:0;
+  animation: chipPop .35s ease forwards;
+}
+@keyframes chipPop{
+  to{ transform: translateY(0); opacity:1; }
+}
+.chip .ico{
+  width:22px; height:22px;
+  border-radius:999px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg,#2bb3a3,#0f172a);
+  color:#fff;
+  font-size:12px;
+}
+
+
+/* === QUIZ GAMING LOOK === */
+#quizExplainBox{
+  border:1px solid rgba(43,179,163,.35) !important;
+  background: rgba(15,23,42,.55) !important;
+  box-shadow: 0 14px 30px rgba(2,6,23,.22);
+}
+#quizExplain{
+  color:#2bb3a3 !important;
+  font-weight:900 !important;
+  letter-spacing:.1px;
+}
+.quizFxGood{
+  animation: fxGood .35s ease;
+}
+@keyframes fxGood{
+  0%{ transform: translateY(0) scale(1); box-shadow: 0 0 0 rgba(43,179,163,0); }
+  60%{ transform: translateY(-1px) scale(1.01); box-shadow: 0 0 34px rgba(43,179,163,.22); }
+  100%{ transform: translateY(0) scale(1); box-shadow: 0 0 0 rgba(43,179,163,0); }
+}
+.quizFxBad{
+  animation: fxBad .38s ease;
+}
+@keyframes fxBad{
+  0%{ transform: translateX(0); }
+  25%{ transform: translateX(-6px); }
+  50%{ transform: translateX(6px); }
+  75%{ transform: translateX(-4px); }
+  100%{ transform: translateX(0); }
+}
+
+/* tiny HUD button */
+.btn.musicToggle{
+  border-radius:999px;
+  padding:10px 14px;
+  background: rgba(43,179,163,.14);
+  border: 1px solid rgba(43,179,163,.28);
+}
+.btn.musicToggle:hover{
+  background: rgba(43,179,163,.18);
+}
+
+
+/* report checklist text visibility */
+#repList .mini span{
+  color:#2bb3a3 !important;
+  font-weight:800;
+}
+#repList .mini{
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(43,179,163,.22);
+}
+.btn.shake{
+  animation: fxBad .38s ease;
+}
+
+
+/* report done card & button */
+#repDoneCard{
+  animation: fadeUp .35s ease forwards;
+}
+.repLink{
+  background: linear-gradient(135deg,#2bb3a3,#0f766e);
+  color:#ffffff !important;
+  border:none;
+  border-radius:12px;
+  padding:12px 18px;
+  font-weight:700;
+}
+.repLink:hover{
+  filter:brightness(1.05);
+}
+
+
+/* === MODULE ANIMATIONS === */
+.module-enter{
+  animation: moduleFadeUp .45s ease both;
+}
+@keyframes moduleFadeUp{
+  from{opacity:0;transform:translateY(16px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* stagger content */
+.module-enter .card,
+.module-enter p,
+.module-enter li{
+  animation: itemReveal .45s ease both;
+}
+@keyframes itemReveal{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+
+/* === PER MODULE ANIM VARIANTS === */
+.page[data-anim="fade"]{ animation: fadeIn .4s ease both; }
+.page[data-anim="slide"]{ animation: slideIn .45s ease both; }
+.page[data-anim="zoom"]{ animation: zoomIn .4s ease both; }
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+
+/* progress bar */
+#moduleProgressWrap{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:4px;
+  background:rgba(255,255,255,.12);
+  z-index:9998;
+}
+#moduleProgressBar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#2bb3a3,#0f766e);
+  transition:width .4s ease;
+}
+
+/* micro icon animation */
+.icon{
+  transition:transform .25s ease;
+}
+.icon:hover{
+  transform:scale(1.15) rotate(3deg);
+}
+
+
+/* === SCORE COUNT ANIMATION === */
+.score-animate{
+  font-size:2.2rem;
+  font-weight:900;
+  color:#2bb3a3;
+}
+
+
+/* === BADGE & GLOW === */
+#fintechBadge{
+  display:none;
+  margin-top:14px;
+  padding:12px 18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2bb3a3,#0f766e);
+  color:white;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 0 0 rgba(43,179,163,.0);
+  animation:badgePop .5s ease both;
+}
+@keyframes badgePop{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+#moduleProgressBar.glow{
+  box-shadow:0 0 12px rgba(43,179,163,.8);
+  animation:glowPulse 1.2s infinite alternate;
+}
+@keyframes glowPulse{
+  from{box-shadow:0 0 8px rgba(43,179,163,.6)}
+  to{box-shadow:0 0 18px rgba(43,179,163,1)}
+}
+
+</style>
+        
+</head>
+<body>
+<div id="moduleProgressWrap"><div id="moduleProgressBar"></div></div>
+<div id="fintechBadge">🏆 Badge unlocked: FinTech Explorer</div>
+  <header class="header">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">F</div>
+          <div>
+            <h1>Your FinTech Mates</h1>
+            <p>Edukasi Financial Technology. Konten dan simulasi interaktif.</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button id="navHome" type="button">Beranda</button>
+          <button id="navTools" type="button">Perencanaan</button>
+          <button id="navQuiz" type="button">Kuis</button>
+<a href="https://iasc.ojk.go.id" class="nav-link" target="_blank" rel="noreferrer">Lapor penipuan</a>
+</nav>
+      </div>
+      <div class="hud">
+        <div class="box">
+          <div class="row">
+            <span id="levelText">Level 1</span>
+            <span id="xpText">0% ke level berikutnya</span>
+          </div>
+          <div class="progress"><div id="xpBar"></div></div>
+        </div>
+        <div class="box box2">
+          <div>
+            <div class="k">Streak</div>
+            <div class="v" id="streakText">1 hari</div>
+          </div>
+          <div style="text-align:right">
+            <div class="k">Badge</div>
+            <div class="v" id="badgeCount">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="pageHome">
+      <div class="grid2">
+        <div class="card">
+          <h2>Belajar fintech yuk!</h2>
+          <p>Platform ini bantu kamu paham fintech lewat artikel, video, infografis, dan kuis. Kamu juga dapat alat perencanaan keuangan personal dan misi harian.</p>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn primary" id="btnStartModule" type="button">Mulai modul</button>
+            <button class="btn" id="btnOpenTools" type="button">Alat perencanaan</button>
+            <button class="btn" id="btnStartQuiz" type="button">Let’s playing</button>
+          </div>
+          <div class="callout">
+            <b>Jika jadi korban penipuan transaksi keuangan</b>
+            <div style="margin-top:6px">Laporkan segera lewat kanal resmi IASC OJK.</div>
+            <a href="https://iasc.ojk.go.id" target="_blank" rel="noreferrer">https://iasc.ojk.go.id</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Pilih modul belajar</h3>
+          <button class="btn modulebtn" data-open-module="fintech" type="button">
+            <span class="mi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><path d="M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z"/></svg></span>
+            <span class="mtxt"><div class="t">Apa itu fintech</div>
+            <div class="d">Definisi, manfaat, dan contoh sederhana</div></span>
+          </button>
+          <button class="btn modulebtn" data-open-module="types" type="button">
+            <span class="mi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4z"/><path d="M13 4h7v7h-7z"/><path d="M4 13h7v7H4z"/><path d="M13 13h7v7h-7z"/></svg></span>
+            <span class="mtxt"><div class="t">Jenis-jenis fintech dan contohnya</div>
+            <div class="d">Pembayaran, lending, investasi, insurtech, regtech</div></span>
+          </button>
+          <button class="btn modulebtn" data-open-module="security" type="button">
+            <span class="mi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9.4-8 10c-4.5-.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
+            <span class="mtxt"><div class="t">Keamanan digital dan privasi</div>
+            <div class="d">OTP, PIN, phishing, izin aplikasi, tips aman</div></span>
+          </button>
+          <button class="btn modulebtn" data-open-module="regulation" type="button">
+            <span class="mi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 6h10"/><path d="M6 6l-3 5h6l-3-5z"/><path d="M18 6l-3 5h6l-3-5z"/><path d="M7 21h10"/></svg></span>
+            <span class="mtxt"><div class="t">Regulasi dan perlindungan</div>
+            <div class="d">Legalitas, hak pengguna, pengaduan, bukti transaksi</div></span>
+          </button>
+        </div>
+      </div>
+      <div class="grid3" style="margin-top:14px">
+        <div class="card">
+          <b>Artikel dan ringkasan</b>
+          <p>Fintech hadir untuk membuat layanan keuangan lebih inklusif, praktis, dan efisien, serta menjadi solusi keuangan di era digital.</p>
+        </div>
+        <div class="card">
+  <b>Video edukasi</b>
+  <p>
+    <a href="https://youtu.be/ttE_zGYt69E?si=_7E1vtgNeDRbt4VB" target="_blank" rel="noreferrer">
+      Tonton video edukasi di YouTube
+    </a>
+  </p>
+</div>
+      </div>
+    </section>
+
+    <section id="pageModule" class="hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div>
+          <h2 id="moduleTitle">Modul</h2>
+          <p id="moduleSub" style="margin-top:6px">Format konten: artikel, video, infografis, dan interaktif.</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" id="btnModuleBack" type="button">Kembali</button>
+          <button class="btn primary" id="btnModuleNext" type="button">Lanjut</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div class="tabbar">
+          <button class="active" data-tab="artikel" type="button">Artikel</button>
+          <button data-tab="video" type="button">Video</button>
+          <button data-tab="infografis" type="button">Infografis</button>
+          <button data-tab="interaktif" type="button">Kuis atau interaktif</button>
+        </div>
+        <div class="content">
+          <div id="tabArtikel"></div>
+          <div id="tabVideo" class="hidden"></div>
+          <div id="tabInfografis" class="hidden"></div>
+          <div id="tabInteraktif" class="hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pageTools" class="hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <h2>Alat perencanaan keuangan personal</h2>
+        <button class="btn" id="btnToolsBack" type="button">Kembali</button>
+      </div>
+
+      <div class="two" style="margin-top:12px">
+        <div class="card">
+          <h3>Budgeting cepat</h3>
+          <p>Atur pembagian kebutuhan, keinginan, dan tabungan dari pendapatan bulanan.</p>
+
+          <label class="label">Pendapatan bulanan</label>
+          <input id="income" type="number" value="6000000" />
+
+          <div class="row3">
+            <div>
+              <label class="label">Kebutuhan (%)</label>
+              <input id="needsPct" type="number" value="50" />
+            </div>
+            <div>
+              <label class="label">Keinginan (%)</label>
+              <input id="wantsPct" type="number" value="30" />
+            </div>
+            <div>
+              <label class="label">Tabungan (%)</label>
+              <input id="savePct" type="number" value="20" />
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="resultrow"><span>Kebutuhan</span><b id="needsOut">Rp0</b></div>
+            <div class="resultrow"><span>Keinginan</span><b id="wantsOut">Rp0</b></div>
+            <div class="resultrow"><span>Tabungan</span><b id="saveOut">Rp0</b></div>
+            <div style="margin-top:8px;font-size:12px;color:var(--muted)">
+              Total persentase: <span id="pctTotal">100</span>%.
+              <span id="pctNote"></span>
+            </div>
+          </div>
+
+          <button class="btn primary" id="btnSavePlan" type="button" style="margin-top:10px">Simpan rencana</button>
+        </div>
+
+        <div class="card">
+          <h3>Target menabung</h3>
+          <p>Hitung berapa bulan untuk mencapai target.</p>
+
+          <label class="label">Target dana</label>
+          <input id="goalAmount" type="number" value="5000000" />
+
+          <label class="label">Tabungan per bulan</label>
+          <input id="monthlySave" type="number" value="500000" />
+
+          <div class="mini" style="margin-top:12px">
+            <b>Estimasi</b>
+            <div style="margin-top:6px" id="goalOut">-</div>
+          </div>
+
+          <button class="btn success" id="btnChallenge" type="button" style="margin-top:10px">Ambil tantangan 30 hari</button>
+          <div style="margin-top:8px;font-size:12px;color:var(--muted)">
+            Tantangan 30 hari memberi XP. Kamu bisa buat aturan sendiri, misalnya tambah tabungan 10 ribu per hari.
+          </div>
+        </div>
+      </div>
+
+      <div class="two" style="margin-top:14px">
+        <div class="card">
+          <h3>Simulasi cicilan</h3>
+          <p>Simulasi edukasi memakai rumus annuity. Ini bukan penawaran kredit.</p>
+
+          <label class="label">Pokok pinjaman</label>
+          <input id="loanPrincipal" type="number" value="10000000" />
+
+          <div class="row2">
+            <div>
+              <label class="label">Bunga per tahun (%)</label>
+              <input id="loanRate" type="number" value="18" />
+            </div>
+            <div>
+              <label class="label">Tenor (bulan)</label>
+              <input id="loanMonths" type="number" value="12" />
+            </div>
+          </div>
+
+          <div class="warn">
+            <b>Estimasi cicilan per bulan</b>
+            <div class="big" id="installOut">Rp0</div>
+            <div style="margin-top:6px;font-size:12px">Cocok untuk membandingkan beberapa skenario tenor dan bunga.</div>
+          </div>
+
+          <button class="btn" id="btnSaveScenario" type="button" style="margin-top:10px">Simpan skenario</button>
+        </div>
+
+        <div class="card">
+          <h3>Misi harian</h3>
+          <p>Gamifikasi sederhana. Selesaikan misi untuk tambah XP.</p>
+
+          <div class="mini" style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div>
+                <b>Cek keamanan akun</b>
+                <div style="margin-top:4px;font-size:13px;color:var(--muted)">Aktifkan PIN aplikasi dan notifikasi transaksi.</div>
+              </div>
+              <button class="btn" id="m1" type="button">Klaim</button>
+            </div>
+          </div>
+
+          <div class="mini" style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div>
+                <b>Rapikan pengeluaran</b>
+                <div style="margin-top:4px;font-size:13px;color:var(--muted)">Catat 3 transaksi hari ini di catatan pribadi.</div>
+              </div>
+              <button class="btn" id="m2" type="button">Klaim</button>
+            </div>
+          </div>
+
+          <div class="mini" style="margin-top:10px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+              <div>
+                <b>Baca modul regulasi</b>
+                <div style="margin-top:4px;font-size:13px;color:var(--muted)">Buka modul regulasi dan baca sampai selesai.</div>
+              </div>
+              <button class="btn" id="m3" type="button">Klaim</button>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Butuh lapor penipuan?</b>
+            <div style="margin-top:6px">Gunakan kanal resmi IASC OJK.</div>
+            <a href="https://iasc.ojk.go.id" target="_blank" rel="noreferrer">https://iasc.ojk.go.id</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pageQuiz" class="hidden">
+      <div class="card" style="max-width:820px;margin:0 auto">
+        <div class="playShape">Let’s playing</div>
+
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <b id="quizProgress">Soal 1</b>
+          <span style="color:var(--muted)">Skor: <b id="quizScore">0</b></span>
+          <button class="btn musicToggle" id="btnMusic" type="button">Musik: Off</button>
+        </div>
+
+        <div class="qprog" aria-label="Progress kuis">
+          <div id="quizBar" class="qprog-bar" style="width:0%"></div>
+        </div>
+
+        <h3 style="margin-top:10px" id="quizQuestion">-</h3>
+
+        <div id="quizOptions" style="margin-top:10px"></div>
+
+        <div id="quizExplainBox" class="mini hidden" style="margin-top:12px">
+          <b>Penjelasan</b>
+          <div style="margin-top:6px" id="quizExplain">-</div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <button class="btn" id="btnQuizExit" type="button">Keluar</button>
+          <button class="btn" id="btnQuizRestart" type="button">Ulang dari awal</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pageResult" class="hidden">
+      <div class="card" style="max-width:820px;margin:0 auto">
+        <h2>Hasil kuis</h2>
+        <div style="font-size:44px;font-weight:900" id="resultScore">0</div>
+        <p id="resultText">-</p>
+        <div id="resultBanner" class="banner">-</div>
+
+        <div class="callout" style="margin-top:12px">
+          <b>Reward</b>
+          <div style="margin-top:6px">XP bertambah. Coba buka modul yang skornya masih rendah.</div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <button class="btn primary" id="btnPlayAgain" type="button">Main lagi</button>
+          <button class="btn" id="btnResultHome" type="button">Kembali</button>
+          <button class="btn" id="btnResultTools" type="button">Buka alat perencanaan</button>
+        </div>
+
+        <div style="margin-top:14px">
+          <b>Badge kamu</b>
+          <div class="chipwrap" id="badgeList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2025 FinEdu. Edukasi fintech dan literasi keuangan.</div>
+    </div>
+  </footer>
+
+  <script>
+
+    const qs = (s) => document.querySelector(s);
+    const qsa = (s) => Array.from(document.querySelectorAll(s));
+    let io = null;
+
+
+    function formatIDR(n){
+      const v = Number.isFinite(n) ? n : 0;
+      return new Intl.NumberFormat("id-ID", { style:"currency", currency:"IDR", maximumFractionDigits:0 }).format(v);
+    }
+    function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
+
+    const pages = {
+      home: qs("#pageHome"),
+      module: qs("#pageModule"),
+      tools: qs("#pageTools"),
+      quiz: qs("#pageQuiz"),
+      result: qs("#pageResult")
+    };
+    function showPage(key){
+      Object.values(pages).forEach(el => el.classList.add("hidden"));
+      pages[key].classList.remove("hidden");
+      pages[key].classList.add("pageIn");
+      setTimeout(() => pages[key].classList.remove("pageIn"), 380);
+      if(key === "tools") recalcTools();
+      if(key === "home") setActiveTab("artikel");
+    }
+
+    let xp = 0;
+    let level = 1;
+    let streak = 1;
+    const badges = new Set();
+
+    function xpToNext(){ return 120 + (level - 1) * 60; }
+
+    function unlockBadge(name){
+      if(!badges.has(name)){
+        badges.add(name);
+        updateHUD();
+      }
+    }
+    function addXP(delta){
+      const next = xp + delta;
+      const need = xpToNext();
+      if(next >= need){
+        level += 1;
+        xp = next - need;
+        unlockBadge("Naik Level");
+      } else {
+        xp = next;
+      }
+      updateHUD();
+    }
+    function updateHUD(){
+      const need = xpToNext();
+      const pct = clamp(Math.round((xp / need) * 100), 0, 100);
+      qs("#levelText").textContent = "Level " + level;
+      qs("#xpText").textContent = pct + "% ke level berikutnya";
+      qs("#xpBar").style.width = pct + "%";
+      qs("#streakText").textContent = streak + " hari";
+      qs("#badgeCount").textContent = badges.size;
+    }
+
+    function escapeHTML(s){
+      return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    }
+
+    function typeCard(title, items, example){
+      const lis = items.map(x => "<li>"+escapeHTML(x)+"</li>").join("");
+      const cls = String(title || "").toLowerCase().includes("p2p") ? "mini p2p" : "mini";
+      return `
+        <div class="${cls}">
+          <b>${escapeHTML(title)}</b>
+          <ul style="margin-top:8px">${lis}</ul>
+          <div style="margin-top:8px;color:var(--muted);font-size:13px">Contoh: ${escapeHTML(example)}</div>
+        </div>
+      `;
+    }
+    function checkItem(text){
+      return `
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="width:10px;height:10px;border-radius:99px;background:var(--success);display:inline-block"></span>
+          <span>${escapeHTML(text)}</span>
+        </div>
+      `;
+    }
+
+    const moduleData = {
+      fintech: {
+        title: "Apa itu fintech",
+        next: "types",
+        article: `
+          <h3>Artikel</h3>
+          <p>Salah satu manifestasi dari kemajuan teknologi ini adalah Financial Technology atau yang lebih dikenal dengan istilah fintech. Fintech atau teknologi finansial adalah istilah yang digunakan untuk menggambarkan inovasi teknologi yang diterapkan dalam layanan dan produk keuangan. Fintech adalah penggunaan teknologi digital untuk membuat layanan keuangan jadi lebih cepat, mudah, dan efisien.  Inovasi-inovasi dalam fintech telah mengubah cara konsumen dan bisnis berinteraksi dengan layanan keuangan, mempermudah akses, serta mempercepat transaksi keuangan. Fintech mencakup berbagai aplikasi, mulai dari pembayaran digital, pinjaman online, investasi, hingga pengelolaan keuangan pribadi dan mata uang kripto.Kamu bisa menemukannya di pembayaran, pinjaman, investasi, asuransi, dan layanan keuangan lain.</p>
+          <ul>
+            <li>Mudah. Transaksi dari HP.</li>
+            <li>Cepat. Proses lebih singkat.</li>
+            <li>Terjangkau. Biaya bisa lebih rendah.</li>
+            <li>Akses luas. Mendorong inklusi keuangan.</li>
+          </ul>
+          <div class="mini" style="margin-top:12px">
+            <b>Contoh sederhana</b>
+            <div style="margin-top:6px;color:var(--muted)">Kamu bayar pakai QR, lalu transaksi tercatat otomatis. Kamu bisa cek riwayat dan kelola pengeluaran.</div>
+          </div>
+        `,
+        video: [
+          { title:"Video 1: Fintech itu apa?", url:"https://youtu.be/ttE_zGYt69E?si=OZwzPRB4xaKYEco8" },
+          { title:"Video 2: Cara kerja pembayaran digital", url:"https://youtu.be/drrKP99Q_LM?si=2wLbWUF_B34Crpf5" }
+        ],
+        infographic: { title:"Ekosistem Fintech", subtitle:"Ekosistem Financial Technology (FinTech) adalah layanan keuangan berbasis teknologi digital yang memudahkan masyarakat dalam melakukan pembayaran, pinjaman, investasi, asuransi, dan perbankan secara online melalui aplikasi. FinTech membantu transaksi menjadi lebih cepat, praktis, dan efisien, serta diawasi oleh OJK dan Bank Indonesia agar aman dan terpercaya." },
+        interactiveType: "challenge",
+        interactive: {
+          title:"Tantangan 1 menit",
+          text:"Tuliskan 2 aktivitas harian kamu yang bisa terbantu fintech. Contoh: bayar makan, nabung otomatis.",
+          rewardBadge:"Selesai Tantangan",
+          rewardXP:15
+        }
+      },
+      types: {
+        title: "Jenis-jenis fintech dan contohnya",
+        next: "security",
+        article: `
+          <h3>Artikel</h3>
+          <p>Jenis fintech yang sering kamu temui:</p>
+          <div class="typegrid" style="margin-top:10px">
+            ${typeCard("Pembayaran", ["E-wallet","QR pembayaran","Payment gateway"], "bayar makan pakai QR")}
+            ${typeCard("P2P Lending", ["Pinjaman online legal","Pendanaan UMKM"], "pendanaan UMKM lewat platform")}
+            ${typeCard("Investasi", ["Reksa dana","Saham","Emas digital"], "beli reksa dana dari aplikasi")}
+            ${typeCard("Insurtech", ["Asuransi mikro","Klaim digital"], "beli asuransi perjalanan dari HP")}
+            ${typeCard("Remitansi", ["Transfer lintas negara","Valas digital"], "kirim uang ke luar negeri")}
+            ${typeCard("RegTech", ["KYC digital","Anti fraud","Monitoring kepatuhan"], "verifikasi identitas dengan e-KYC")}
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <b>Tips cepat</b>
+            <div style="margin-top:6px;color:var(--muted)">Pilih produk yang sesuai kebutuhan. Bandingkan biaya, syarat, dan risiko.</div>
+          </div>
+        `,
+        video: [
+          { title:"Video 1: Pembayaran digital", url:"https://youtu.be/drrKP99Q_LM?si=f17Jjqj4wk837qyK" },
+          { title:"Video 2: P2P Lending dan risikonya", url:"https://youtu.be/Pp9bqzQjTRI?si=h7niyjP_v7i_3Wls" }
+        ],
+        infographic: { title:"Jenis Fintech", subtitle:"FinTech terbagi ke dalam beberapa jenis utama, yaitu pembayaran digital, P2P lending, investasi, insurtech, remitansi, dan regtech. Masing-masing jenis dirancang untuk menjawab kebutuhan keuangan masyarakat, baik untuk transaksi, pembiayaan, perlindungan risiko, maupun pengawasan dan keamanan layanan keuangan." },
+        interactiveType: "match",
+        interactive: { rewardBadge:"Paham Jenis Fintech", rewardXP:20 }
+      },
+      security: {
+        title: "Keamanan digital dan privasi",
+        next: "regulation",
+        article: `
+          <h3>Artikel</h3>
+          <ul>
+            <li>Jangan pernah bagikan OTP, PIN, dan password.</li>
+            <li>Waspada phishing. Cek link, domain, dan sumber pesan.</li>
+            <li>Aktifkan keamanan tambahan. PIN aplikasi, biometrik, dan notifikasi transaksi.</li>
+            <li>Batasi izin aplikasi. Kamera dan kontak hanya jika perlu.</li>
+            <li>Gunakan jaringan aman. Hindari Wi-Fi publik untuk transaksi.</li>
+          </ul>
+          <div class="mini" style="margin-top:12px">
+            <b>Checklist aman sebelum transaksi</b>
+            <div style="margin-top:8px;display:grid;gap:6px;color:var(--text)">
+              ${checkItem("Nama penerima sesuai")}
+              ${checkItem("Nominal benar")}
+              ${checkItem("Link resmi atau aplikasi resmi")}
+              ${checkItem("Notifikasi transaksi aktif")}
+            </div>
+          </div>
+        `,
+        video: [
+          { title:"Video 1: Kenali phishing", url:"https://youtu.be/4agnOqBTa48?si=aVQRTaI3nnKGJPAj" },
+          { title:"Video 2: Kenap gak boleh bagikan kode OTP?", url:"https://youtu.be/rMCQRO4nD4M?si=9tbDa-3RGSQMdPRN" }
+        ],
+       infographic: { title:"Infografis: Ekosistem Fintech", subtitle:"Alur pengaduan layanan fintech dimulai dengan mengenali masalah yang Kamu alami, seperti transaksi gagal, saldo hilang, akun dibajak, atau penipuan. Catat waktu dan nominal kejadian agar laporan jelas. Amankan akun secepatnya dengan mengganti password, mengaktifkan autentikasi dua faktor, dan logout dari semua perangkat. Jika perlu, lakukan pemblokiran akun atau kartu. Kumpulkan bukti pendukung berupa screenshot transaksi, bukti transfer, notifikasi, dan kronologi singkat. Bukti ini penting agar pengaduan diproses cepat. Hubungi customer service melalui aplikasi atau website resmi penyedia. Jelaskan masalah secara ringkas dan lampirkan bukti. Simpan nomor tiket pengaduan untuk tindak lanjut. Jika belum selesai, eskalasi ke kanal pengaduan resmi dengan menyertakan nomor tiket. Jangan pernah membagikan OTP, PIN, atau password." },
+        video: [
+          { title:"Video 1: Cara cek legalitas layanan", url:"https://youtu.be/Hb9w8cWrBYw?si=2Gp5eM1By0yYg5cT" },
+          { title:"Video 2: Hak pengguna dan pengaduan", url:"https://youtu.be/bjAmT1YRsJs?si=U-JpPvfyI2aIQX9D" }
+        ],
+        infographic: { title:"🚨 Modus Phishing yang Perlu Diwaspadai", 
+        subtitle: "📩 Pesan mengaku dari bank/fintech, ⏰ Nada mendesak: “akun diblokir”, “transaksi mencurigakan, 🔗 Link mirip tapi bukan domain resmi, 🔢 Meminta OTP, PIN, atau password. ❌ Layanan resmi tidak pernah meminta OTP & PIN." },
+        interactiveType: "report",
+        interactive: { rewardBadge:"Siap Lapor", rewardXP:20 }
+      },
+      regulation: {
+        title: "Regulasi dan perlindungan",
+        next: "tools",
+        article: `
+          <h3>Artikel</h3>
+          <p>Sebelum pakai layanan fintech, kamu perlu tahu perlindungan dasar:</p>
+          <ul>
+            <li>Cek legalitas penyedia layanan. Cari info izin dan status resmi.</li>
+            <li>Baca kebijakan privasi. Perhatikan data yang dikumpulkan dan dipakai.</li>
+            <li>Simpan bukti transaksi. Screenshot, nomor referensi, chat, dan email.</li>
+            <li>Tahu jalur pengaduan. Mulai dari CS penyedia, lalu kanal resmi.</li>
+          </ul>
+          <div class="callout">
+            <b>Jika jadi korban penipuan transaksi keuangan</b>
+            <div style="margin-top:6px">
+              1. Amankan akun. Ganti PIN dan password.<br/>
+              2. Simpan bukti. Bukti transfer, kronologi, nomor rekening, chat, link, dan waktu.<br/>
+              3. Lapor lewat IASC OJK.
+            </div>
+            <div style="margin-top:8px">
+              <a href="https://iasc.ojk.go.id" target="_blank" rel="noreferrer">https://iasc.ojk.go.id</a>
+            </div>
+          </div>
+        `,
+        video: [
+          { title:"Video 1: Cara cek legalitas layanan", url:"https://youtu.be/Hb9w8cWrBYw?si=2Fmkw1a8N-MZPksH" },
+          { title:"Video 2: Hak pengguna dan pengaduan", url:"https://youtu.be/bjAmT1YRsJs?si=bl-r8P2rqWibS6kj" }
+        ],
+        infographic: { title:"ALUR PENGADUAN LAYANAN FINTECH", subtitle:"Cek legalitas → Hubungi CS → Simpan bukti → Lapor ke OJK → Pantau laporan" },
+        interactiveType: "report",
+        interactive: { rewardBadge:"Siap Lapor", rewardXP:20 }
+      }
+    };
+
+    let currentModuleKey = "fintech";
+
+    function renderVideo(items){
+      const cards = items.map(v => {
+        return `
+          <a class="mini" href="${v.url}" target="_blank" rel="noreferrer" style="text-decoration:none;color:var(--text)">
+            <div style="font-weight:900">${escapeHTML(v.title)}</div>
+            <div style="margin-top:6px;font-size:12px;color:var(--muted)">${escapeHTML(v.url)}</div>
+          </a>
+        `;
+      }).join("");
+      return `
+        <h3>Video edukasi</h3>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:10px">Ini placeholder link. Kamu bisa ganti dengan video yang kamu pilih.</div>
+        <div class="two">${cards}</div>
+      `;
+    }
+    function renderInfographic(title, subtitle){
+      return `
+        <h3>${escapeHTML(title)}</h3>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:10px">${escapeHTML(subtitle)}</div>
+      `;
+    }
+
+    function renderInteractive(m){
+      if(m.interactiveType === "challenge"){
+        return `
+          <h3>${escapeHTML(m.interactive.title)}</h3>
+          <div style="color:var(--muted);font-size:13px">${escapeHTML(m.interactive.text)}</div>
+          <textarea id="challengeText" placeholder="Tulis jawaban kamu di sini" style="margin-top:10px"></textarea>
+          <button class="btn primary" id="btnChallengeDone" type="button" style="margin-top:10px">Submit</button>
+          <div id="challengeDoneMsg" class="mini hidden" style="margin-top:12px">
+            <b>Selesai</b>
+            <div style="margin-top:6px;color:var(--muted)">XP bertambah.</div>
+          </div>
+        `;
+      }
+      if(m.interactiveType === "match"){
+        return `
+          <h3>Mini game: Cocokkan jenis fintech</h3>
+          <div style="color:var(--muted);font-size:13px">Klik jenis, lalu klik penjelasannya.</div>
+          <div class="two" style="margin-top:12px">
+            <div>
+              <div style="font-weight:900;margin-bottom:8px">Jenis</div>
+              <div id="matchLeft"></div>
+            </div>
+            <div>
+              <div style="font-weight:900;margin-bottom:8px">Penjelasan</div>
+              <div id="matchRight"></div>
+            </div>
+          </div>
+          <div id="matchMsg" style="margin-top:12px"></div>
+          <button class="btn primary" id="btnMatchReward" type="button" style="margin-top:14px">Progress 0/4</button>
+        `;
+      }
+      if(m.interactiveType === "phishing"){
+        return `
+          <h3>Simulasi: Aman atau penipuan?</h3>
+          <div style="color:var(--muted);font-size:13px">Pilih Aman atau Penipuan untuk tiap skenario.</div>
+          <div class="mini" style="margin-top:12px">
+            <b id="phProgress">Skenario 1/3</b>
+            <div style="margin-top:8px" id="phText">-</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+            <button class="btn success" id="btnPhSafe" type="button">Aman</button>
+            <button class="btn danger" id="btnPhFraud" type="button">Penipuan</button>
+          </div>
+          <div class="mini hidden" id="phExplainBox" style="margin-top:12px">
+            <b>Penjelasan</b>
+            <div style="margin-top:6px;color:var(--muted)" id="phExplain"></div>
+          </div>
+          <div id="phDone" class="mini hidden" style="margin-top:12px"></div>
+        `;
+      }
+      if(m.interactiveType === "report"){
+        return `
+          <h3>Checklist bukti pelaporan</h3>
+          <div style="color:var(--muted);font-size:13px">Centang yang sudah kamu siapkan.</div>
+          <div style="margin-top:12px;display:grid;gap:8px" id="repList"></div>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+<button class="btn primary" id="btnRepReward" type="button" type="button">Progress 0/6</button>
+          </div>
+          <div id="repHint" class="mini hidden" style="margin-top:10px"></div>
+
+<div id="repDoneCard" class="card hidden" style="margin-top:16px">
+  <h3 style="color:#2bb3a3;font-weight:800">Berkas kamu sudah lengkap</h3>
+  <p style="margin-top:6px;color:#334155">
+    Semua checklist sudah terpenuhi. Kamu bisa lanjut melapor melalui kanal resmi.
+  </p>
+  <a href="https://iasc.ojk.go.id" target="_blank" rel="noreferrer"
+     class="btn repLink"
+     style="margin-top:12px;display:inline-block">
+     Lapor di sini
+  </a>
+</div>
+
+        `;
+      }
+      return `<div class="mini">Konten interaktif belum tersedia.</div>`;
+    }
+
+    function renderTabs(m){
+      qs("#tabArtikel").innerHTML = m.article;
+      qs("#tabVideo").innerHTML = renderVideo(m.video);
+      qs("#tabInfografis").innerHTML = renderInfographic(m.infographic.title, m.infographic.subtitle);
+      qs("#tabInteraktif").innerHTML = renderInteractive(m);
+      attachInteractiveHandlers(m);
+    }
+
+    function setActiveTab(tab){
+      qsa(".tabbar button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+      qs("#tabArtikel").classList.toggle("hidden", tab !== "artikel");
+      qs("#tabVideo").classList.toggle("hidden", tab !== "video");
+      qs("#tabInfografis").classList.toggle("hidden", tab !== "infografis");
+      qs("#tabInteraktif").classList.toggle("hidden", tab !== "interaktif");
+    }
+
+    qsa(".tabbar button").forEach(b => b.addEventListener("click", () => setActiveTab(b.dataset.tab)));
+
+    function setActiveModuleBtn(key){
+      qsa("[data-open-module]").forEach(b => b.classList.toggle("mod-active", b.dataset.openModule === key));
+    }
+
+    function revealContent(){
+      const root = qs("#pageModule");
+      if(!root) return;
+      root.querySelectorAll("#tabArtikel p, #tabArtikel li, #tabInfografis p, #tabInfografis li, #tabInteraktif p, #tabInteraktif li")
+        .forEach(el => el.classList.add("reveal"));
+      // trigger observer already set for .reveal
+}
+
+    function openModule(key){
+      currentModuleKey = key;
+      const m = moduleData[key];
+      qs("#moduleTitle").textContent = m.title;
+      setActiveModuleBtn(key);
+      renderTabs(m);
+      // add subtitle text
+      qs("#moduleSub").textContent = m.subtitle || "Format konten: artikel, video, infografis, dan interaktif.";
+      // reveal paragraphs & lists
+      revealContent();
+      setActiveTab("artikel");
+      addXP(8);
+      if(key === "fintech") unlockBadge("Mulai Belajar");
+      showPage("module");
+    }
+
+    qs("#btnModuleBack").addEventListener("click", () => showPage("home"));
+    qs("#btnModuleNext").addEventListener("click", () => {
+      const nextKey = moduleData[currentModuleKey].next;
+      if(nextKey === "tools"){
+        showPage("tools");
+        addXP(8);
+        return;
+      }
+      openModule(nextKey);
+    });
+
+    qs("#btnStartModule").addEventListener("click", () => openModule("fintech"));
+    qs("#btnOpenTools").addEventListener("click", () => showPage("tools"));
+    qs("#btnStartQuiz").addEventListener("click", () => startQuiz());
+
+    qsa("[data-open-module]").forEach(btn => btn.addEventListener("click", () => openModule(btn.dataset.openModule)));
+
+    qs("#navHome").addEventListener("click", () => showPage("home"));
+    qs("#navTools").addEventListener("click", () => showPage("tools"));
+    qs("#navQuiz").addEventListener("click", () => startQuiz());
+
+    qs("#btnToolsBack").addEventListener("click", () => showPage("home"));
+
+    function attachInteractiveHandlers(m){
+      if(m.interactiveType === "challenge"){
+        const doneBtn = qs("#btnChallengeDone");
+        const msg = qs("#challengeDoneMsg");
+        let done = false;
+        doneBtn.addEventListener("click", () => {
+          if(done) return;
+          done = true;
+          addXP(m.interactive.rewardXP);
+          unlockBadge(m.interactive.rewardBadge);
+          const doneCard = qs("#repDoneCard");
+          if(doneCard){ doneCard.classList.remove("hidden"); }
+          msg.classList.remove("hidden");
+          doneBtn.textContent = "Selesai";
+          doneBtn.classList.remove("primary");
+          doneBtn.classList.add("success");
+        });
+      }
+
+      if(m.interactiveType === "match"){
+        const pairs = [
+          { left: "Pembayaran", right: "QR dan e-wallet" },
+          { left: "P2P Lending", right: "Pemberi dana dan peminjam" },
+          { left: "Insurtech", right: "Asuransi digital" },
+          { left: "RegTech", right: "KYC dan kepatuhan" },
+        ];
+        const lefts = pairs.map(p => p.left);
+        const rights = pairs.map(p => p.right).sort(() => Math.random() - 0.5);
+        let selectedLeft = null;
+        const matched = new Set();
+
+        const leftWrap = qs("#matchLeft");
+        const rightWrap = qs("#matchRight");
+        const msg = qs("#matchMsg");
+        const rewardBtn = qs("#btnMatchReward");
+
+        leftWrap.innerHTML = lefts.map(l => `<button class="btn" data-l="${escapeHTML(l)}" type="button" style="width:100%;margin-top:10px">${escapeHTML(l)}</button>`).join("");
+        rightWrap.innerHTML = rights.map(r => `<button class="btn" data-r="${escapeHTML(r)}" type="button" style="width:100%;margin-top:10px">${escapeHTML(r)}</button>`).join("");
+
+        function updateProgress(){
+          rewardBtn.textContent = "Progress " + matched.size + "/" + pairs.length;
+          const win = matched.size === pairs.length;
+          rewardBtn.classList.toggle("success", win);
+          rewardBtn.classList.toggle("primary", !win);
+        }
+        updateProgress();
+
+        leftWrap.querySelectorAll("button").forEach(b => {
+          b.addEventListener("click", () => {
+            const l = b.getAttribute("data-l");
+            if(matched.has(l)) return;
+            selectedLeft = l;
+            msg.innerHTML = "";
+            leftWrap.querySelectorAll("button").forEach(x => x.style.background = "#fff");
+            b.style.background = "#eef2ff";
+          });
+        });
+
+        rightWrap.querySelectorAll("button").forEach(b => {
+          b.addEventListener("click", () => {
+            if(!selectedLeft) return;
+            const r = b.getAttribute("data-r");
+            const ok = pairs.some(p => p.left === selectedLeft && p.right === r);
+            if(ok){
+              matched.add(selectedLeft);
+              msg.innerHTML = "<b>Benar. Lanjutkan.</b>";
+              leftWrap.querySelectorAll("button").forEach(x => {
+                if(x.getAttribute("data-l") === selectedLeft){
+                  x.style.background = "#16a34a";
+                  x.style.color = "#fff";
+                  x.style.borderColor = "#16a34a";
+                }
+              });
+            } else {
+              msg.innerHTML = "<b>Belum tepat. Coba lagi.</b>";
+            }
+            selectedLeft = null;
+            leftWrap.querySelectorAll("button").forEach(x => {
+              if(!matched.has(x.getAttribute("data-l"))){
+                x.style.background = "#fff";
+                x.style.color = "var(--text)";
+                x.style.borderColor = "#cbd5e1";
+              }
+            });
+            updateProgress();
+          });
+        });
+
+        rewardBtn.addEventListener("click", () => {
+          if(matched.size !== pairs.length) return;
+          addXP(m.interactive.rewardXP);
+          unlockBadge(m.interactive.rewardBadge);
+          const doneCard = qs("#repDoneCard");
+          if(doneCard){ doneCard.classList.remove("hidden"); }
+          msg.innerHTML = "<b>Keren. Kamu menang. XP bertambah.</b>";
+        });
+      }
+
+      if(m.interactiveType === "phishing"){
+        const scenarios = [
+          { text: "Pesan dari 'CS' minta OTP untuk refund", safe: false, reason: "CS resmi tidak minta OTP." },
+          { text: "Link domain resmi, kamu buka lewat aplikasi yang terpasang", safe: true, reason: "Lebih aman jika lewat aplikasi resmi, tetap cek detail." },
+          { text: "File APK dikirim lewat chat untuk klaim hadiah", safe: false, reason: "APK luar store berisiko malware." },
+        ];
+        let i = 0;
+        let correct = 0;
+        let done = false;
+
+        const prog = qs("#phProgress");
+        const text = qs("#phText");
+        const box = qs("#phExplainBox");
+        const explain = qs("#phExplain");
+        const doneBox = qs("#phDone");
+
+        function render(){
+          prog.textContent = "Skenario " + (i+1) + "/" + scenarios.length;
+          text.textContent = scenarios[i].text;
+          box.classList.add("hidden");
+        }
+        render();
+
+        function pick(choiceSafe){
+          if(done) return;
+          const s = scenarios[i];
+          const ok = (choiceSafe === s.safe);
+          if(ok) correct += 1;
+          explain.textContent = s.reason;
+          box.classList.remove("hidden");
+
+          i += 1;
+          if(i < scenarios.length){
+            setTimeout(render, 300);
+          } else {
+            done = true;
+            const good = correct >= 2;
+            addXP(good ? m.interactive.rewardXPGood : m.interactive.rewardXPBad);
+            if(good) unlockBadge(m.interactive.rewardBadge);
+            doneBox.classList.remove("hidden");
+            doneBox.innerHTML = "<b>Skor simulasi: " + correct + "/" + scenarios.length + "</b>";
+          }
+        }
+
+        qs("#btnPhSafe").addEventListener("click", () => pick(true));
+        qs("#btnPhFraud").addEventListener("click", () => pick(false));
+      }
+
+      if(m.interactiveType === "report"){
+        const items = [
+          "Bukti transaksi atau nomor referensi",
+          "Kronologi singkat kejadian",
+          "Screenshot chat atau email",
+          "Nomor rekening atau akun tujuan",
+          "Waktu kejadian",
+          "Link atau akun yang digunakan pelaku",
+        ];
+        const checked = new Set();
+        const list = qs("#repList");
+        const btn = qs("#btnRepReward");
+
+        list.innerHTML = items.map((it, idx) => {
+          return `
+            <label class="mini" style="display:flex;gap:10px;align-items:center">
+              <input type="checkbox" data-i="${idx}"/>
+              <span>${escapeHTML(it)}</span>
+            </label>
+          `;
+        }).join("");
+
+        function update(){
+          btn.textContent = "Progress " + checked.size + "/" + items.length;
+          btn.classList.toggle("success", checked.size === items.length);
+          btn.classList.toggle("primary", checked.size !== items.length);
+        }
+        update();
+
+        list.querySelectorAll("input[type=checkbox]").forEach(cb => {
+          cb.addEventListener("change", () => {
+            const i = Number(cb.getAttribute("data-i"));
+            if(cb.checked) checked.add(i); else checked.delete(i);
+            update();
+          });
+        });
+
+        btn.addEventListener("click", () => {
+          const hint = qs("#repHint");
+          if(checked.size !== items.length){
+            btn.classList.remove("shake");
+            void btn.offsetWidth;
+            btn.classList.add("shake");
+            if(hint){
+              hint.classList.remove("hidden");
+              hint.innerHTML = "<b>Lengkapi dulu ya.</b> Kamu masih kurang " + (items.length - checked.size) + " bukti.";
+            }
+            return;
+          }
+          if(hint){
+            hint.classList.add("hidden");
+            hint.innerHTML = "";
+          }
+          addXP(m.interactive.rewardXP);
+          unlockBadge(m.interactive.rewardBadge);
+          const doneCard = qs("#repDoneCard");
+          if(doneCard){ doneCard.classList.remove("hidden"); }
+        });
+      }
+    }
+
+    function recalcTools(){
+      const income = Number(qs("#income").value || 0);
+      const needsPct = clamp(Number(qs("#needsPct").value || 0), 0, 100);
+      const wantsPct = clamp(Number(qs("#wantsPct").value || 0), 0, 100);
+      const savePct = clamp(Number(qs("#savePct").value || 0), 0, 100);
+
+      const needs = income * needsPct / 100;
+      const wants = income * wantsPct / 100;
+      const save = income * savePct / 100;
+
+      qs("#needsOut").textContent = formatIDR(needs);
+      qs("#wantsOut").textContent = formatIDR(wants);
+      qs("#saveOut").textContent = formatIDR(save);
+
+      const total = needsPct + wantsPct + savePct;
+      qs("#pctTotal").textContent = total;
+      qs("#pctNote").textContent = (total === 100) ? " Sudah pas." : " Atur agar 100% agar rapi.";
+
+      const goalAmount = Number(qs("#goalAmount").value || 0);
+      const monthlySave = Number(qs("#monthlySave").value || 0);
+      let months = Infinity;
+      if(monthlySave > 0) months = Math.ceil(goalAmount / monthlySave);
+      qs("#goalOut").textContent = (months === Infinity) ? "Isi tabungan per bulan lebih dari 0." : "Target tercapai dalam sekitar " + months + " bulan.";
+
+      const P = Math.max(0, Number(qs("#loanPrincipal").value || 0));
+      const annual = Math.max(0, Number(qs("#loanRate").value || 0)) / 100;
+      const n = Math.max(1, Number(qs("#loanMonths").value || 1));
+      const r = annual / 12;
+      let m = 0;
+      if(r === 0) m = P / n;
+      else {
+        const pow = Math.pow(1 + r, n);
+        m = (P * r * pow) / (pow - 1);
+      }
+      qs("#installOut").textContent = formatIDR(Number.isFinite(m) ? m : 0);
+    }
+
+    ["income","needsPct","wantsPct","savePct","goalAmount","monthlySave","loanPrincipal","loanRate","loanMonths"]
+      .forEach(id => qs("#"+id).addEventListener("input", recalcTools));
+
+    qs("#btnSavePlan").addEventListener("click", () => { addXP(10); unlockBadge("Planner"); });
+    qs("#btnChallenge").addEventListener("click", () => { addXP(12); unlockBadge("Target Setter"); });
+    qs("#btnSaveScenario").addEventListener("click", () => { addXP(10); unlockBadge("Simulasi"); });
+
+    function mission(btnId, xpReward, badgeName){
+      const btn = qs("#"+btnId);
+      let done = false;
+      btn.addEventListener("click", () => {
+        if(done) return;
+        done = true;
+        addXP(xpReward);
+        if(badgeName) unlockBadge(badgeName);
+        btn.textContent = "Selesai";
+        btn.classList.add("success");
+      });
+    }
+    mission("m1", 12, null);
+    mission("m2", 10, null);
+    mission("m3", 14, "Aware");
+
+    const quizQuestions = [
+{ q:"Fintech itu apa?", options:[
+        { t:"Layanan keuangan berbasis teknologi", c:true, e:"Fintech menggabungkan layanan keuangan dan teknologi digital."},
+{ t:"Aplikasi hiburan", c:false, e:"Fintech fokus pada layanan keuangan."},
+{ t:"Produk tabungan manual", c:false, e:"Itu bukan berbasis teknologi."},
+{ t:"Sistem tanpa transaksi", c:false, e:"Fintech justru memfasilitasi transaksi."},
+]},
+{ q:"Contoh fintech pembayaran adalah", options:[
+        { t:"Dompet digital dan QR", c:true, e:"E-wallet dan QR termasuk pembayaran digital."},
+{ t:"Buku tabungan fisik", c:false, e:"Itu layanan bank konvensional."},
+{ t:"Cek kertas", c:false, e:"Itu instrumen tradisional."},
+{ t:"Slip manual", c:false, e:"Bukan contoh fintech."},
+]},
+{ q:"P2P lending berarti", options:[
+        { t:"Platform yang mempertemukan pemberi dana dan peminjam", c:true, e:"P2P mempertemukan lender dan borrower melalui platform."},
+{ t:"Aplikasi beli pulsa", c:false, e:"Itu layanan pembayaran."},
+{ t:"Aplikasi pesan makanan", c:false, e:"Itu bukan layanan keuangan."},
+{ t:"Aplikasi streaming", c:false, e:"Tidak terkait pinjaman."},
+]},
+{ q:"Insurtech fokus pada", options:[
+        { t:"Asuransi berbasis digital", c:true, e:"Insurtech mempermudah pembelian dan klaim asuransi lewat digital."},
+{ t:"Pinjaman modal", c:false, e:"Itu lending."},
+{ t:"Trading saham", c:false, e:"Itu investasi."},
+{ t:"Pengiriman uang internasional", c:false, e:"Itu remitansi."},
+]},
+{ q:"RegTech biasanya membantu", options:[
+        { t:"Kepatuhan, KYC, dan anti fraud", c:true, e:"RegTech membantu compliance dan mitigasi risiko."},
+{ t:"Edit foto", c:false, e:"Tidak relevan."},
+{ t:"Buat konten hiburan", c:false, e:"Bukan tujuan RegTech."},
+{ t:"Menambah followers", c:false, e:"Tidak terkait."},
+]},
+{ q:"Crowdfunding UMKM termasuk jenis fintech apa?", options:[
+        { t:"Pendanaan (crowdfunding)", c:true, e:"Crowdfunding mengumpulkan dana dari banyak orang untuk proyek atau UMKM."},
+{ t:"Pembayaran digital", c:false, e:"Pembayaran digital fokus pada transaksi bayar, bukan pendanaan."},
+{ t:"Insurtech", c:false, e:"Insurtech fokus pada layanan asuransi."},
+{ t:"Wealthtech", c:false, e:"Wealthtech fokus pada investasi dan pengelolaan aset."},
+]},
+{ q:"Wealthtech biasanya membantu pengguna untuk", options:[
+        { t:"Investasi dan pengelolaan aset", c:true, e:"Wealthtech membantu investasi, reksa dana, robo-advisor, dan portofolio."},
+{ t:"Pesan tiket konser", c:false, e:"Itu bukan layanan keuangan."},
+{ t:"Edit foto dan video", c:false, e:"Bukan fungsi fintech."},
+{ t:"Main game online", c:false, e:"Bukan fungsi fintech."},
+]},
+{ q:"Regtech berfungsi untuk", options:[
+        { t:"Membantu kepatuhan regulasi dan pelaporan", c:true, e:"Regtech membantu perusahaan patuh aturan, audit, dan pelaporan."},
+{ t:"Menjual produk fesyen", c:false, e:"Tidak terkait kepatuhan."},
+{ t:"Membuat konten hiburan", c:false, e:"Tidak terkait regulasi."},
+{ t:"Menaikkan followers", c:false, e:"Tidak terkait fintech."},
+]},
+{ q:"Kunci keamanan akun yang paling tepat adalah", options:[
+        { t:"Aktifkan 2FA dan gunakan password kuat", c:true, e:"2FA dan password kuat mengurangi risiko pembajakan akun."},
+{ t:"Bagikan OTP ke CS", c:false, e:"OTP bersifat rahasia. CS resmi tidak akan meminta OTP."},
+{ t:"Gunakan password yang sama di semua aplikasi", c:false, e:"Itu meningkatkan risiko jika satu akun bocor."},
+{ t:"Simpan PIN di catatan publik", c:false, e:"Itu berbahaya karena mudah diakses orang lain."},
+]},
+{ q:"OTP itu seharusnya", options:[
+        { t:"Rahasia dan hanya untuk verifikasi kamu", c:true, e:"OTP hanya untuk pemilik akun. Jangan dibagikan."},
+{ t:"Boleh dibagikan ke siapa saja", c:false, e:"OTP tidak boleh dibagikan."},
+{ t:"Selalu diminta oleh CS", c:false, e:"CS resmi tidak meminta OTP."},
+{ t:"Tidak penting", c:false, e:"OTP penting untuk keamanan transaksi."},
+]},
+{ q:"Phishing biasanya terjadi saat", options:[
+        { t:"Kamu klik link palsu yang mirip situs resmi", c:true, e:"Phishing menipu lewat halaman palsu untuk mencuri data."},
+{ t:"Kamu baca modul belajar", c:false, e:"Belajar tidak menyebabkan phishing."},
+{ t:"Kamu update aplikasi dari store resmi", c:false, e:"Store resmi lebih aman."},
+{ t:"Kamu pakai PIN yang kuat", c:false, e:"PIN kuat justru melindungi."},
+]},
+{ q:"Ciri aplikasi fintech ilegal yang paling umum adalah", options:[
+        { t:"Tidak jelas izin, meminta akses berlebihan", c:true, e:"Aplikasi ilegal sering tidak transparan dan minta akses tidak relevan."},
+{ t:"Menjelaskan biaya dan risiko di awal", c:false, e:"Transparansi justru ciri layanan yang baik."},
+{ t:"Memiliki CS resmi di aplikasi", c:false, e:"Layanan resmi biasanya punya CS yang jelas."},
+{ t:"Ada kebijakan privasi", c:false, e:"Layanan resmi biasanya menampilkan kebijakan privasi."},
+]},
+{ q:"Data pribadi yang wajib kamu jaga adalah", options:[
+        { t:"OTP, PIN, password, dan kode verifikasi", c:true, e:"Data ini bisa dipakai untuk mengambil alih akun."},
+{ t:"Nama kota saja", c:false, e:"Yang paling sensitif adalah kredensial dan kode verifikasi."},
+{ t:"Judul lagu favorit", c:false, e:"Itu bukan data sensitif untuk akun."},
+{ t:"Warna kesukaan", c:false, e:"Itu bukan data sensitif."},
+]},
+{ q:"Kalau transaksi gagal tapi saldo terpotong, langkah pertama adalah", options:[
+        { t:"Cek riwayat transaksi dan simpan bukti screenshot", c:true, e:"Bukti dan detail transaksi mempercepat penanganan CS."},
+{ t:"Sebar OTP ke teman", c:false, e:"OTP tidak terkait dan sangat berbahaya."},
+{ t:"Hapus aplikasi dulu", c:false, e:"Hapus aplikasi bisa menghilangkan akses bukti/riwayat."},
+{ t:"Langsung bayar lagi tanpa cek", c:false, e:"Itu bisa bikin transaksi dobel."},
+]},
+{ q:"Channel pengaduan yang paling aman adalah", options:[
+        { t:"Menu bantuan di aplikasi atau website resmi", c:true, e:"Gunakan kanal resmi agar terhindar dari penipuan."},
+{ t:"DM akun random yang mengaku CS", c:false, e:"Akun palsu sering menipu lewat DM."},
+{ t:"Link dari komentar", c:false, e:"Link komentar rawan phishing."},
+{ t:"Grup chat tidak resmi", c:false, e:"Tidak ada jaminan keamanan dan validasi."},
+]},
+{ q:"QR code pembayaran di Indonesia umumnya mengacu pada", options:[
+        { t:"Standar QRIS", c:true, e:"QRIS menyatukan pembayaran QR agar interoperable."},
+{ t:"Kode promo toko", c:false, e:"Kode promo berbeda dengan standar pembayaran."},
+{ t:"Barcode produk", c:false, e:"Barcode produk bukan untuk pembayaran."},
+{ t:"Kode pos", c:false, e:"Tidak terkait pembayaran."},
+]},
+{ q:"Tujuan regulasi fintech untuk pengguna adalah", options:[
+        { t:"Melindungi konsumen dan mendorong layanan yang aman", c:true, e:"Regulasi mengatur izin, transparansi, dan perlindungan konsumen."},
+{ t:"Membuat biaya makin tidak jelas", c:false, e:"Regulasi justru mendorong transparansi."},
+{ t:"Menghapus keamanan data", c:false, e:"Regulasi menuntut perlindungan data."},
+{ t:"Melarang semua fintech", c:false, e:"Regulasi mengatur, bukan melarang semua."},
+]},
+{ q:"Kalau ada orang mengaku CS dan minta PIN, kamu harus", options:[
+        { t:"Tolak dan hubungi CS resmi lewat aplikasi", c:true, e:"PIN dan OTP tidak boleh dibagikan. Pastikan kanal resmi."},
+{ t:"Kasih PIN supaya cepat selesai", c:false, e:"Itu risiko pembajakan akun."},
+{ t:"Kasih password saja", c:false, e:"Password juga tidak boleh dibagikan."},
+{ t:"Transfer biaya admin", c:false, e:"Ini ciri penipuan."},
+]},
+{ q:"E-wallet paling sering dipakai untuk", options:[
+        { t:"Pembayaran harian dan transfer kecil", c:true, e:"E-wallet memudahkan bayar, top up, dan transfer ringan."},
+{ t:"Mencetak dokumen", c:false, e:"Tidak terkait pembayaran."},
+{ t:"Mengedit video", c:false, e:"Tidak terkait fintech."},
+{ t:"Mengukur suhu", c:false, e:"Tidak terkait fintech."},
+]},
+{ q:"Contoh layanan insurtech adalah", options:[
+        { t:"Beli polis asuransi secara digital di aplikasi", c:true, e:"Insurtech memudahkan pembelian dan klaim asuransi digital."},
+{ t:"Pesan makanan online", c:false, e:"Bukan layanan asuransi."},
+{ t:"Streaming film", c:false, e:"Bukan layanan asuransi."},
+{ t:"Toko online biasa", c:false, e:"Bukan fokus asuransi."},
+]},
+{ q:"Robo-advisor termasuk kategori", options:[
+        { t:"Wealthtech", c:true, e:"Robo-advisor membantu rekomendasi portofolio investasi."},
+{ t:"Insurtech", c:false, e:"Insurtech fokus asuransi."},
+{ t:"P2P lending", c:false, e:"P2P lending fokus pinjam-meminjam."},
+{ t:"Payment", c:false, e:"Payment fokus transaksi bayar."},
+]},
+{ q:"Langkah paling aman sebelum instal aplikasi fintech adalah", options:[
+        { t:"Cek legalitas dan unduh dari store resmi", c:true, e:"Cek izin dan unduh dari sumber resmi mengurangi risiko aplikasi palsu."},
+{ t:"Unduh dari link chat", c:false, e:"Link chat rawan file berbahaya."},
+{ t:"Instal versi mod", c:false, e:"Versi mod berisiko malware dan pencurian data."},
+{ t:"Berikan akses kontak tanpa membaca", c:false, e:"Akses berlebihan berisiko privasi."},
+]},
+{ q:"Apa yang harus dilakukan saat HP hilang tapi akun e-wallet masih login?", options:[
+        { t:"Segera logout semua perangkat dan blokir akun", c:true, e:"Logout dan blokir mencegah transaksi tanpa izin."},
+{ t:"Tunggu beberapa hari", c:false, e:"Menunggu memperbesar risiko penyalahgunaan."},
+{ t:"Bagikan OTP untuk cek", c:false, e:"OTP tidak boleh dibagikan."},
+{ t:"Tidak perlu apa-apa", c:false, e:"Itu berbahaya."},
+]},
+{ q:"Kebijakan privasi biasanya menjelaskan", options:[
+        { t:"Data apa yang dikumpulkan dan cara penggunaannya", c:true, e:"Kebijakan privasi menjelaskan pengumpulan, penggunaan, dan perlindungan data."},
+{ t:"Resep makanan favorit", c:false, e:"Tidak relevan."},
+{ t:"Jadwal liburan", c:false, e:"Tidak relevan."},
+{ t:"Cara main game", c:false, e:"Tidak relevan."},
+]},
+{ q:"Jika kamu menerima SMS berisi link 'akun diblokir', langkah aman adalah", options:[
+        { t:"Jangan klik, cek langsung di aplikasi resmi", c:true, e:"Link SMS sering dipakai untuk phishing. Cek lewat kanal resmi."},
+{ t:"Klik segera dan isi data", c:false, e:"Itu cara umum pencurian data."},
+{ t:"Kirim OTP ke pengirim", c:false, e:"OTP rahasia."},
+{ t:"Transfer uang agar aman", c:false, e:"Tidak ada prosedur resmi seperti itu."},
+]},
+
+];
+
+    let qi = 0;
+    let score = 0;
+
+    function startQuiz(){
+      qi = 0;
+      setQuizBar();
+      score = 0;
+      qs("#quizScore").textContent = "0";
+      qs("#quizExplainBox").classList.add("hidden");
+      addXP(6);
+      renderQuiz();
+      showPage("quiz");
+    }
+
+    
+    // === quiz sound (no file) ===
+    let _ac = null;
+    function playTone(ok){
+      try{
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if(!AC) return;
+        if(!_ac) _ac = new AC();
+        const t = _ac.currentTime;
+        const o = _ac.createOscillator();
+        const g = _ac.createGain();
+        o.type = "sine";
+        o.frequency.value = ok ? 820 : 260;
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.12, t + 0.01);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + (ok ? 0.10 : 0.16));
+        o.connect(g); g.connect(_ac.destination);
+        o.start(t);
+        o.stop(t + (ok ? 0.12 : 0.18));
+      }catch(e){}
+    }
+
+    
+    // === Background Music (HTML5 Audio) ===
+    let bgmAudio = null;
+    function startBGM(){
+      if(!bgmAudio){
+        bgmAudio = new Audio("roblox-minecraft-fortnite-video-game-music-447254.mp3");
+        bgmAudio.loop = true;
+        bgmAudio.volume = 0.4;
+      }
+      bgmAudio.play().catch(()=>{});
+    }
+    function stopBGM(){
+      if(bgmAudio){
+        bgmAudio.pause();
+        bgmAudio.currentTime = 0;
+      }
+    }
+
+    function setQuizBar(){
+      const total = quizQuestions.length;
+      const pct = Math.round((((qi+1) / total) * 100));
+      const bar = qs("#quizBar");
+      if(bar) bar.style.width = pct + "%";
+    }
+
+
+    function shuffleArray(arr){
+      const a = arr.slice();
+      for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+      }
+      return a;
+    }
+
+    function renderQuiz(){
+      const q = quizQuestions[qi];
+      qs("#quizProgress").textContent = "Soal " + (qi+1) + " / " + quizQuestions.length;
+      setQuizBar();
+      qs("#quizQuestion").textContent = q.q;
+
+      // acak urutan jawaban per soal (anti curang)
+      const opts = shuffleArray(q.options);
+      qs("#quizOptions").innerHTML = opts.map((o, idx) => {
+        return `<button class="btn" data-opt="${idx}" type="button" style="width:100%;margin-top:10px;text-align:left">${escapeHTML(o.t)}</button>`;
+      }).join("");
+
+      // simpan urutan opsi yang sudah diacak untuk dipakai saat klik
+      q.__shuffled = opts;
+
+      qs("#quizOptions").querySelectorAll("button").forEach(b => {
+        b.addEventListener("click", () => {
+          const opt = (q.__shuffled || q.options)[Number(b.getAttribute("data-opt"))];
+
+          // determine correct option
+          const correctOpt = q.options.find(x => x.c === true);
+
+
+          // lock options after one click
+          qs("#quizOptions").querySelectorAll("button").forEach(x => x.disabled = true);
+
+          qs("#quizExplain").textContent = opt.c ? opt.e : ("Jawaban yang benar: " + correctOpt.t + ". " + correctOpt.e);
+          qs("#quizExplainBox").classList.remove("hidden");
+
+          playTone(!!opt.c);
+
+          const quizCard = b.closest(".card");
+          if(quizCard){
+            quizCard.classList.remove("quizFxGood","quizFxBad");
+            void quizCard.offsetWidth;
+            quizCard.classList.add(opt.c ? "quizFxGood" : "quizFxBad");
+          }
+if(opt.c){
+            score += 4;
+            addXP(12);
+          } else {
+            addXP(4);
+          }
+          qs("#quizScore").textContent = String(score);
+
+          qi += 1;
+          if(qi < quizQuestions.length){
+            const delay = 3000;
+            setTimeout(() => {
+              qs("#quizExplainBox").classList.add("hidden");
+              renderQuiz();
+            }, delay);
+          } else {
+            finishQuiz();
+          }
+        });
+      });
+    }
+
+    function finishQuiz(){
+      streak = clamp(streak + 1, 1, 365);
+      addXP(10);
+
+      qs("#resultScore").textContent = String(score);
+
+      let bannerText = "";
+      let bannerClass = "banner low";
+
+      if(score < 50){
+        bannerText = "Ini baru pemanasan, lanjutkan! 💪";
+        bannerClass = "banner low";
+      } else if(score < 75){
+        bannerText = "Progress kamu kelihatan banget! 😎";
+        bannerClass = "banner mid";
+      } else {
+        bannerText = "Excellent! Skill kamu di atas rata-rata 🚀";
+        bannerClass = "banner high";
+      }
+
+      qs("#resultText").textContent = "Skor kamu " + score + " dari 100.";
+      const rb = qs("#resultBanner");
+      rb.textContent = bannerText;
+      rb.className = bannerClass;
+
+      // tambah badge hasil (game-like)
+      if(score >= 90) badges.add("Fintech Master");
+      if(score >= 75) badges.add("Smart Saver");
+      if(score >= 50) badges.add("Good Learner");
+      if(score < 50) badges.add("Try Again");
+      badges.add("Quiz 25 Soal");
+      if(streak >= 3) badges.add("Konsisten 3x");
+
+      renderBadges();
+      showPage("result");
+    }
+
+    function renderBadges(){
+      const wrap = qs("#badgeList");
+      wrap.innerHTML = "";
+      if(badges.size === 0){
+        wrap.innerHTML = `<span style="color:var(--muted)">Belum ada. Coba baca modul dan ulang kuis.</span>`;
+        return;
+      }
+      Array.from(badges).forEach(b => {
+        const el = document.createElement("span");
+        el.className = "chip";
+        const ico = document.createElement("span");
+        ico.className = "ico";
+        const map = {
+          "Fintech Master":"FM",
+          "Smart Saver":"SS",
+          "Good Learner":"GL",
+          "Try Again":"TA",
+          "Quiz 25 Soal":"25",
+          "Konsisten 3x":"3x"
+        };
+        ico.textContent = map[b] || "★";
+        const txt = document.createElement("span");
+        txt.textContent = b;
+        el.appendChild(ico);
+        el.appendChild(txt);
+        wrap.appendChild(el);
+      });
+    }
+
+    qs("#btnQuizExit").addEventListener("click", () => { stopBGM(); showPage("home"); });
+
+    let musicOn = false;
+    const musicBtn = qs("#btnMusic");
+    if(musicBtn){
+      musicBtn.addEventListener("click", () => {
+        musicOn = !musicOn;
+        musicBtn.textContent = "Musik: " + (musicOn ? "On" : "Off");
+        if(musicOn) startBGM(); else stopBGM();
+      });
+    }
+
+    qs("#btnQuizRestart").addEventListener("click", () => startQuiz());
+
+    qs("#btnPlayAgain").addEventListener("click", () => startQuiz());
+    qs("#btnResultHome").addEventListener("click", () => showPage("home"));
+    qs("#btnResultTools").addEventListener("click", () => showPage("tools"));
+
+    function recalcInitial(){
+      updateHUD();
+      recalcTools();
+    }
+
+    recalcInitial();
+    showPage("home");
+  
+    // ===== Visual polish: reveal + floating bubbles =====
+    (function(){
+      // Add reveal class to cards
+      document.querySelectorAll(".card").forEach(el => el.classList.add("reveal"));
+
+      // IntersectionObserver reveal
+      var io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(en.isIntersecting){
+            en.target.classList.add("is-visible");
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+      // Floating bubbles
+      const bubbleCount = 10;
+      for(let i=0;i<bubbleCount;i++){
+        const b = document.createElement("div");
+        b.className = "fx-bubble";
+        const left = Math.random() * 100;
+        const size = 10 + Math.random() * 18;
+        const dur = 10 + Math.random() * 12;
+        const drift = (Math.random() * 60 - 30).toFixed(0) + "px";
+        b.style.left = left + "vw";
+        b.style.width = size + "px";
+        b.style.height = size + "px";
+        b.style.setProperty("--dur", dur + "s");
+        b.style.setProperty("--drift", drift);
+        b.style.bottom = (-20 - Math.random()*60) + "px";
+        b.style.opacity = (0.25 + Math.random()*0.35).toFixed(2);
+        document.body.appendChild(b);
+      }
+    })();
+
+  
+</script>
+
+
+
+<style>
+/* === LIGHTEN MODULE TITLE COLORS === */
+#moduleTitle{
+  color:#e6fffb !important; /* soft light teal */
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+.module-header h1,
+.module-header h2{
+  color:#e6fffb !important;
+}
+</style>
+
+<script>
+(function(){
+  // Add ripple class to main buttons
+  document.querySelectorAll('button, a.btn, .btn').forEach(function(el){
+    el.classList.add('ripple');
+  });
+
+  // Ripple handler
+  document.addEventListener('click', function(e){
+    var target = e.target.closest('.ripple');
+    if(!target) return;
+    var rect = target.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    target.style.setProperty('--rx', x + 'px');
+    target.style.setProperty('--ry', y + 'px');
+    target.classList.remove('rippling');
+    // restart animation
+    void target.offsetWidth;
+    target.classList.add('rippling');
+  });
+
+  // Reveal on scroll (safe IntersectionObserver)
+  function markReveal(){
+    var scope = document.querySelector('#moduleBody') || document;
+    scope.querySelectorAll('p, li, .card, .info-box, .warning-box').forEach(function(el){
+      if(!el.classList.contains('reveal')) el.classList.add('reveal');
+    });
+  }
+  markReveal();
+
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 }) : null;
+
+  function observeAll(){
+    if(!io) {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('show'); });
+      return;
+    }
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+  observeAll();
+
+  // Module switch fade (hook into existing openModule if exists)
+  var panel = document.querySelector('.module-panel') || document.querySelector('#modulePanel') || null;
+  function withTransition(fn){
+    if(!panel){ fn(); markReveal(); observeAll(); return; }
+    panel.classList.add('switching');
+    setTimeout(function(){
+      fn();
+      markReveal();
+      observeAll();
+      panel.classList.remove('switching');
+    }, 160);
+  }
+
+  // Patch clicks on module buttons to use transition
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-open-module]');
+    if(!btn) return;
+    if(window.openModule && typeof window.openModule === 'function'){
+      var key = btn.getAttribute('data-open-module');
+      e.preventDefault();
+      withTransition(function(){ window.openModule(key); });
+    }
+  }, true);
+
+  // If the app updates module content via other methods, re-mark reveals after any module content change
+  var body = document.querySelector('#moduleBody');
+  if(body && 'MutationObserver' in window){
+    var mo = new MutationObserver(function(){
+      markReveal();
+      observeAll();
+    });
+    mo.observe(body, { childList:true, subtree:true });
+  }
+})();
+</script>
+
+
+<script>
+// === MODULE ANIMATION HOOK ===
+(function(){
+  const origShowPage = window.showPage;
+  window.showPage = function(key){
+    if(typeof origShowPage === "function") origShowPage(key);
+    const page = document.getElementById("page"+key.charAt(0).toUpperCase()+key.slice(1));
+    if(page){
+      page.classList.remove("module-enter");
+      void page.offsetWidth;
+      page.classList.add("module-enter");
+    }
+  };
+})();
+</script>
+
+
+<script>
+(function(){
+  const animMap = {
+    home:"fade",
+    modul:"slide",
+    quiz:"zoom",
+    result:"fade"
+  };
+  const pages = document.querySelectorAll(".page");
+  const bar = document.getElementById("moduleProgressBar");
+
+  const origShowPage = window.showPage;
+  window.showPage = function(key){
+    if(typeof origShowPage === "function") origShowPage(key);
+
+    pages.forEach(p=>{
+      p.classList.remove("fade","slide","zoom");
+      p.removeAttribute("data-anim");
+    });
+
+    const page = document.getElementById("page"+key.charAt(0).toUpperCase()+key.slice(1));
+    if(page){
+      page.setAttribute("data-anim", animMap[key] || "fade");
+    }
+
+    if(bar){
+      const keys = Object.keys(animMap);
+      const idx = Math.max(keys.indexOf(key),0);
+      bar.style.width = ((idx+1)/keys.length*100) + "%";
+    }
+  };
+})();
+</script>
+
+
+<script>
+/* === MODULE READ PROGRESS TRACKING === */
+const moduleKeys = ["modul1","modul2","modul3","modul4"];
+let readModules = new Set();
+
+const origShowPage2 = window.showPage;
+window.showPage = function(key){
+  if(typeof origShowPage2 === "function") origShowPage2(key);
+
+  if(moduleKeys.includes(key)){
+    readModules.add(key);
+    updateReadProgress();
+  }
+};
+
+function updateReadProgress(){
+  const bar = document.getElementById("moduleProgressBar");
+  if(!bar) return;
+  const pct = Math.round((readModules.size / moduleKeys.length) * 100);
+  bar.style.width = pct + "%";
+
+  if(pct === 100){
+    launchFinalConfetti();
+  }
+}
+
+/* === FINAL CONFETTI WHEN ALL MODULES DONE === */
+function launchFinalConfetti(){
+  if(window.__finalConfetti) return;
+  window.__finalConfetti = true;
+  if(typeof launchConfetti === "function"){
+    launchConfetti();
+    setTimeout(launchConfetti, 500);
+    setTimeout(launchConfetti, 1000);
+  }
+}
+
+/* === SCORE COUNT UP ANIMATION === */
+function animateScore(el, to){
+  let current = 0;
+  el.classList.add("score-animate");
+  const step = Math.max(1, Math.ceil(to / 40));
+  const timer = setInterval(()=>{
+    current += step;
+    if(current >= to){
+      current = to;
+      clearInterval(timer);
+    }
+    el.textContent = current;
+  }, 30);
+}
+
+/* Hook score animation if element exists */
+document.addEventListener("DOMContentLoaded", ()=>{
+  const scoreEl = document.getElementById("resultScore");
+  if(scoreEl){
+    const val = parseInt(scoreEl.textContent || "0",10);
+    scoreEl.textContent = "0";
+    animateScore(scoreEl, val);
+  }
+});
+</script>
+
+
+<script>
+/* === PROGRESS + BADGE + STORAGE === */
+const MODULE_TOTAL = 4;
+let readModules = new Set(JSON.parse(localStorage.getItem("readModules") || "[]"));
+
+function saveProgress(){
+  localStorage.setItem("readModules", JSON.stringify([...readModules]));
+}
+
+function updateReadProgress(){
+  const bar = document.getElementById("moduleProgressBar");
+  const badge = document.getElementById("fintechBadge");
+  if(!bar) return;
+
+  const pct = Math.round((readModules.size / MODULE_TOTAL) * 100);
+  bar.style.width = pct + "%";
+
+  if(pct === 100){
+    bar.classList.add("glow");
+    if(badge){
+      badge.style.display = "block";
+    }
+    if(typeof launchFinalConfetti === "function"){
+      launchFinalConfetti();
+    }
+  }
+  saveProgress();
+}
+
+/* Restore progress on load */
+document.addEventListener("DOMContentLoaded", ()=>{
+  updateReadProgress();
+});
+
+/* Hook showPage safely */
+const _showPage = window.showPage;
+window.showPage = function(key){
+  if(typeof _showPage === "function") _showPage(key);
+  if(key.startsWith("modul")){
+    readModules.add(key);
+    updateReadProgress();
+  }
+};
+</script>
+
+</body>
+</html>
